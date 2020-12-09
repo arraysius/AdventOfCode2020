@@ -14,12 +14,14 @@ struct Passport {
 };
 
 int main() {
+    ifstream file("day04_input.txt");
+
     int validPassports = 0;
     Passport* passport = new Passport;
 
     do {
         string line;
-        getline(cin, line);
+        getline(file, line);
 
         if (line == "") {
             // Parse passport fields
@@ -61,7 +63,7 @@ int main() {
                 passport->ecl = value;
             }
         }
-    } while (!cin.eof());
+    } while (!file.eof());
 
     cout << validPassports << endl;
 

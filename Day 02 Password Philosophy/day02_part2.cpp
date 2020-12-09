@@ -3,10 +3,12 @@
 using namespace std;
 
 int main() {
+    ifstream file("day02_input.txt");
+
     int validPasswords = 0;
 
     string line;
-    while (getline(cin, line)) {
+    while (getline(file, line)) {
         int min, max;
         char letter, temp;
         string password;

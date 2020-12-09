@@ -3,10 +3,12 @@
 using namespace std;
 
 int main() {
+    ifstream file("day01_input.txt");
+
     unordered_set<int> nums;
 
     string line;
-    while (getline(cin, line)) {
+    while (getline(file, line)) {
         istringstream iss(line);
         int num;
         while (iss >> num) {

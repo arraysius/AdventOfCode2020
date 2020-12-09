@@ -3,10 +3,12 @@
 using namespace std;
 
 int main() {
-    bool seatIds[1024];
+    ifstream file("day05_input.txt");
+
+    bool seatIds[128 * 8];
 
     string seq;
-    while (cin >> seq) {
+    while (file >> seq) {
         int row, col;
 
         // Binary search row
@@ -35,8 +37,9 @@ int main() {
         seatIds[seatId] = true;
     }
 
-    for (int i = 0; i < 1024; i++) {
-        if (i - 1 >= 0 && i + 1 <= 1023 && !seatIds[i] && seatIds[i - 1] && seatIds[i + 1]) {
+    for (int i = 0; i < 128 * 8; i++) {
+        if (i - 1 >= 0 && i + 1 < 128 * 8 && !seatIds[i] && seatIds[i - 1] &&
+            seatIds[i + 1]) {
             cout << i << endl;
             break;
         }

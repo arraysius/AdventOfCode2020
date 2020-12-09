@@ -3,6 +3,8 @@
 using namespace std;
 
 int main() {
+    ifstream file("day03_input.txt");
+
     int mapWidth = 31;
     int trees[] = {0, 0, 0, 0, 0};
     pair<int, int> slopes[] = {make_pair(1, 1), make_pair(3, 1),
@@ -12,8 +14,8 @@ int main() {
 
     int lineNum = 1;
     string line;
-    getline(cin, line);
-    while (getline(cin, line)) {
+    getline(file, line);
+    while (getline(file, line)) {
         // Count first 4 slopes
         for (int i = 0; i <= 3; i++) {
             pos[i] += slopes[i].first;

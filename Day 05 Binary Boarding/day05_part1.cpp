@@ -3,10 +3,12 @@
 using namespace std;
 
 int main() {
+    ifstream file("day05_input.txt");
+
     int maxSeatId = -1;
 
     string seq;
-    while (cin >> seq) {
+    while (file >> seq) {
         int row, col;
 
         // Binary search row
